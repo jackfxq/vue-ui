@@ -41,11 +41,11 @@ export default {
       }
       let scriptPattern = /<script>(.*)<\/script>/;
       let scriptArr = scriptPattern.exec(str);
+      let exportStr = '';
       if(scriptArr&&scriptArr.length>1){
         exportStr = scriptArr[1];
       }
       let exportPattern = /export default(\s*)(.*)/;
-      let exportStr = '';
       let optionsStr = '';
       let exportArr = exportPattern.exec(exportStr)
       if(exportArr&&exportArr.length >2){
