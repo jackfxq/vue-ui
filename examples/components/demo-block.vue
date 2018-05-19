@@ -4,7 +4,14 @@
         <div span="14">
           <div class="docs-demo docs-demo--expand">
             <div class="highlight-wrapper">
-              <slot name="highlight"></slot>
+              <div class="code-content">
+                <slot name="code"></slot>
+              </div>
+              <span class="run-code" @click="runCode">运行代码</span>
+              <span class="copy-code">复制代码</span>
+              <div class="highlight-content">
+                <slot name="highlight"></slot>
+              </div>
             </div>
           </div>
         </div>
@@ -31,6 +38,15 @@
     methods: {
       toggle() {
         this.isExpand = !this.isExpand;
+      },
+      runCode() {
+        this.$nextTick(() => {
+          let codeStr = this.$el.querySelector('.code-content div').getAttribute('data-desc');
+          let code = decodeURIComponent(codeStr).replace('<html><head></head><body>','').replace('</body></html>','')
+          window.open(`${location.href.split('#')[0]}#/code/${encodeURIComponent(code)}`)
+          console.log(code)
+        })
+
       }
     },
     mounted() {
@@ -40,7 +56,7 @@
   };
 </script>
 
-<style lang="less" type="text/less">
+<style lang="scss" type="text/less">
 
   .demo-container {
     transition: height .5s ease;
@@ -114,6 +130,21 @@
 
   .docs-demo.docs-demo--expand .highlight-wrapper {
     display: block;
+    position:relative;
+    .run-code{
+      position: absolute;
+      top: 10px;
+      right: 70px;
+      color:#3FAAF5;
+      cursor: pointer;
+    }
+    .copy-code{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color:#3FAAF5;
+      cursor: pointer;
+    }
   }
 
   .docs-demo__code__mobi {

@@ -27,13 +27,14 @@
 
 ::: demo
 ```html
-
-<div>
-  <w-alert type="success">成功提示的文案</w-alert>
-  <w-alert type="info">消息提示的文案</w-alert>
-  <w-alert type="warning" title="警告提示的文案"></w-alert>
-  <w-alert type="error" title="错误提示的文案"></w-alert>
-</div>
+<template>
+  <div>
+    <w-alert type="success">成功提示的文案</w-alert>
+    <w-alert type="info">消息提示的文案</w-alert>
+    <w-alert type="warning" title="警告提示的文案"></w-alert>
+    <w-alert type="error" title="错误提示的文案"></w-alert>
+  </div>
+</template>
 
 ```
 :::
@@ -49,13 +50,15 @@
 
 ::: demo
 ```html
+<template>
+  <div>
+    <w-alert type="success" show-icon>成功提示的文案</w-alert>
+    <w-alert type="info" show-icon>消息提示的文案</w-alert>
+    <w-alert type="warning" show-icon>警告提示的文案</w-alert>
+    <w-alert type="error" show-icon>错误提示的文案</w-alert>
+  </div>
+</template>
 
-<div>
-  <w-alert type="success" show-icon>成功提示的文案</w-alert>
-  <w-alert type="info" show-icon>消息提示的文案</w-alert>
-  <w-alert type="warning" show-icon>警告提示的文案</w-alert>
-  <w-alert type="error" show-icon>错误提示的文案</w-alert>
-</div>
 
 ```
 :::
@@ -71,13 +74,15 @@
 
 ::: demo
 ```html
+<template>
+  <div>
+    <w-alert type="success" center show-icon>成功提示的文案</w-alert>
+    <w-alert type="info" center show-icon>消息提示的文案</w-alert>
+    <w-alert type="warning" center show-icon>警告提示的文案</w-alert>
+    <w-alert type="error" center show-icon>错误提示的文案</w-alert>
+  </div>
+</template>
 
-<div>
-  <w-alert type="success" center show-icon>成功提示的文案</w-alert>
-  <w-alert type="info" center show-icon>消息提示的文案</w-alert>
-  <w-alert type="warning" center show-icon>警告提示的文案</w-alert>
-  <w-alert type="error" center show-icon>错误提示的文案</w-alert>
-</div>
 
 ```
 :::
@@ -92,18 +97,20 @@
 
 ::: demo
 ```html
+<template>
+  <div class="dome-alert demo-block">
+    <w-alert type="success" :closable="false">不可关闭的 alert</w-alert>
+    <w-alert type="info" close-text="知道了">自定义关闭的 alert</w-alert>
+    <w-alert type="warning" @close="hello">设置了回调的 alert</w-alert>
+  </div>
+</template>
 
-<div class="dome-alert demo-block">
-  <w-alert type="success" :closable="false">不可关闭的 alert</w-alert>
-  <w-alert type="info" close-text="知道了">自定义关闭的 alert</w-alert>
-  <w-alert type="warning" @close="hello">设置了回调的 alert</w-alert>
-</div>
 
 ```
 :::
 
 <div class="dome-alert demo-block">
-  <w-alert type="success" 
+  <w-alert type="success"
            description="这是一句绕口令：黑灰化肥会挥发发灰黑化肥挥发；灰黑化肥会挥发发黑灰化肥发挥。 黑灰化肥会挥发发灰黑化肥黑灰……">带辅助性文字介绍</w-alert>
   <w-alert type="info" show-icon
            description="这是一句绕口令：黑灰化肥会挥发发灰黑化肥挥发；灰黑化肥会挥发发黑灰化肥发挥。 黑灰化肥会挥发发灰黑化肥黑灰……">带有 icon 和辅助性文字介绍</w-alert>
@@ -111,13 +118,15 @@
 
 ::: demo
 ```html
+<template>
+  <div class="dome-alert demo-block">
+    <w-alert type="success"
+             description="这是一句绕口令：黑灰化肥会挥发发灰黑化肥挥发；灰黑化肥会挥发发黑灰化肥发挥。 黑灰化肥会挥发发灰黑化肥黑灰……">带辅助性文字介绍</w-alert>
+    <w-alert type="info" show-icon
+             description="这是一句绕口令：黑灰化肥会挥发发灰黑化肥挥发；灰黑化肥会挥发发黑灰化肥发挥。 黑灰化肥会挥发发灰黑化肥黑灰……">带有 icon 和辅助性文字介绍</w-alert>
+  </div>
+</template>
 
-<div class="dome-alert demo-block">
-  <w-alert type="success" 
-           description="这是一句绕口令：黑灰化肥会挥发发灰黑化肥挥发；灰黑化肥会挥发发黑灰化肥发挥。 黑灰化肥会挥发发灰黑化肥黑灰……">带辅助性文字介绍</w-alert>
-  <w-alert type="info" show-icon
-           description="这是一句绕口令：黑灰化肥会挥发发灰黑化肥挥发；灰黑化肥会挥发发黑灰化肥发挥。 黑灰化肥会挥发发灰黑化肥黑灰……">带有 icon 和辅助性文字介绍</w-alert>
-</div>
 
 ```
 :::

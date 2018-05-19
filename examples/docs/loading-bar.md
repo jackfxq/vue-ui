@@ -8,7 +8,7 @@
 <script>
   export default{
     mounted () {
-      
+
     },
     methods: {
       start () {
@@ -56,9 +56,11 @@
 ::: demo
 
 ```html
-<w-button @click="start">开始</w-button>
-<w-button @click="end">结束</w-button>
-<w-button @click="error">错误</w-button>
+<template>
+  <w-button @click="start">开始</w-button>
+  <w-button @click="end">结束</w-button>
+  <w-button @click="error">错误</w-button>
+</template>
 <script>
   export default{
     methods: {
@@ -91,36 +93,38 @@
 ::: demo
 
 ```html
-<w-button @click="setSpeed">设置speed速度</w-button>
-<w-button @click="setSpinner">设置spinner动画效果</w-button>
-<w-button @click="setPercentNum">设置percentNum每次加载的比例</w-button>
-<w-button @click="setShowSpinner">设置是否显示spinner</w-button>
+<template>
+  <w-button @click="setSpeed">设置speed速度</w-button>
+  <w-button @click="setSpinner">设置spinner动画效果</w-button>
+  <w-button @click="setPercentNum">设置percentNum每次加载的比例</w-button>
+  <w-button @click="setShowSpinner">设置是否显示spinner</w-button>
+</template>
 <script>
   export default{
     methods: {
      setSpeed () {
        this.$loading.config({
          speed: 10
-       })
-       this.$loading.start()
+       });
+       this.$loading.start();
      },
      setSpinner () {
        this.$loading.config({
          easing: 'ease'
-       })
-       this.$loading.start()
+       });
+       this.$loading.start();
      },
      setPercentNum () {
        this.$loading.config({
          percentNum: 0.1
-       })
-       this.$loading.start()
+       });
+       this.$loading.start();
      },
      setShowSpinner () {
        this.$loading.config({
          showSpinner: false
-       })
-       this.$loading.start()
+       });
+       this.$loading.start();
      }
     }
   }
@@ -138,4 +142,3 @@
 | easing | spinner加载动画 | String | linear, ease, cubic-bezier... | 贝萨尔曲线值|
 | percentNum | 每次前进的百分比 | Float | 0-1 | Math.random() |
 | showSpinner | 是否显示spinner | Boolean | true, false | 是否显示spinner |
-

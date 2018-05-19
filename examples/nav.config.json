@@ -24,6 +24,11 @@
       "name": "logs",
       "path": "/logs",
       "desc": "更新日志"
+    },
+    {
+      "name": "code",
+      "path": "/code/:code",
+      "type": "pages"
     }
   ],
   "组件": [

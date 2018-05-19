@@ -1,6 +1,8 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import Vuep from 'vuep'
+import 'vuep/dist/vuep.css'
 import App from './App'
 import router from './router'
 import demoBlock from './components/demo-block.vue'
@@ -9,6 +11,7 @@ import '../packages/theme-default/lib/index.css'
 
 Vue.component('demo-block', demoBlock)
 Vue.use(VVUI)
+Vue.use(Vuep)
 
 Vue.config.productionTip = false
 

@@ -29,7 +29,7 @@
     },
     watch: {
       $route () {
-        this.isIndex = this.$route.name === 'index'
+        this.isIndex = (this.$route.name === 'index' || this.$route.name === 'code')
       }
     },
     mounted () {
