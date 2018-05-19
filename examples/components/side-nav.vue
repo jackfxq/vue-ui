@@ -1,10 +1,10 @@
-<style lang="less" type="text/less">
+<style lang="scss" type="text/less">
   .side-nav{
     display: inline-block;
     padding-top: 32px;
     /* padding: 0; */
     box-sizing: border-box;
-    height:calc(~'100vh - 80px');
+    height:calc(100vh - 80px);
     overflow-y:auto;
     color: #3F536E;
     background-color: #fff;
@@ -38,7 +38,8 @@
         display: block;
         position: relative;
         padding: 6px 0 6px 24px;
-        font-size:16px;
+        font-size:14px;
+        color: #aaa;
         /* color: #2C405A; */
         /* font-weight: bold; */
       }
