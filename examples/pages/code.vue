@@ -42,7 +42,7 @@ export default {
       let scriptPattern = /<script>(.*)<\/script>/;
       let scriptArr = scriptPattern.exec(str);
       if(scriptArr&&scriptArr.length>1){
-        exportStr = scriptPatternArr[1];
+        exportStr = scriptArr[1];
       }
       let exportPattern = /export default(\s*)(.*)/;
       let exportStr = '';
