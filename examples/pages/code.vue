@@ -108,6 +108,9 @@ export default {
     margin-top: 80px;
     display: flex;
     height:calc(100vh - 80px);
+    pre{
+      color:#fff;
+    }
     .code-mirror-container{
       width: 50%;
       .code-mirror{
