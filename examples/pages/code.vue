@@ -30,6 +30,7 @@ export default {
   methods:{
     renderDemo(demo) {
       // console.log(demo.split('\n').join(''))
+      this.$el.querySelector('.preview-demo').innerHTML='';
       let str = demo.split('\n').join('');
       // let script = demo.match(/<script>(.*)<\/script>/);
 
@@ -71,7 +72,6 @@ export default {
       },options))
       this.vm = new Demo().$mount();
       console.log(this.vm)
-      this.$el.querySelector('.preview-demo').innerHTML='';
       this.$el.querySelector('.preview-demo').appendChild(this.vm.$el);
     }
   },
@@ -89,16 +89,17 @@ export default {
         autofocus: true,
         matchBrackets: true,
 		    autoCloseBrackets: true,
+      })
+
+      this.editor.on('blur',() => {
+        console.log('blur')
+        // this.vm.$destory();
+        this.renderDemo(this.editor.getValue());
 
       })
 
       this.renderDemo(demo);
 
-      this.editor.on('blur',() => {
-        // this.vm.$destory();
-        this.renderDemo(this.editor.getValue());
-
-      })
   }
 }
 </script>

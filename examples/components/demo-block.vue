@@ -8,7 +8,8 @@
                 <slot name="code"></slot>
               </div>
               <span class="run-code" @click="runCode">运行代码</span>
-              <span class="copy-code">复制代码</span>
+              <span class="copy-code" @click="copyCode">复制代码</span>
+              <input type="text" class="copy-code-content" :value="code" style="opacity:0;position:absolute;">
               <div class="highlight-content">
                 <slot name="highlight"></slot>
               </div>
@@ -27,7 +28,8 @@
     data() {
       return {
         isExpand: false,
-        height:0
+        height:0,
+        code:''
       };
     },
     watch:{
@@ -41,16 +43,34 @@
       },
       runCode() {
         this.$nextTick(() => {
-          let codeStr = this.$el.querySelector('.code-content div').getAttribute('data-desc');
-          let code = decodeURIComponent(codeStr).replace('<html><head></head><body>','').replace('</body></html>','')
-          window.open(`${location.href.split('#')[0]}#/code/${encodeURIComponent(code)}`)
-          console.log(code)
+
+          window.open(`${location.href.split('#')[0]}#/code/${encodeURIComponent(this.code)}`)
+          console.log(this.code)
         })
+
+      },
+      copyCode() {
+        // window.clipboardData.setData("Text",this.code);
+        var e = this.$el.querySelector('.copy-code-content');
+        console.log(e.value)
+        e.select();
+        document.execCommand("copy",false,null)
+        // window.copy(this.code)
+        // window.copy('asd')
+        if(document.execCommand('copy', false, null)){
+          console.log(111)
+        }
+        alert('复制成功')
+      },
+      setCode() {
 
       }
     },
     mounted() {
       this.height=this.$el.querySelector('.docs-demo--expand').offsetHeight;
+      let codeStr = this.$el.querySelector('.code-content div').getAttribute('data-desc');
+      let code = decodeURIComponent(codeStr).replace('<html><head></head><body>','').replace('</body></html>','')
+      this.code=code;
       console.log(this.$el.querySelector('.docs-demo--expand').offsetHeight)
     }
   };
