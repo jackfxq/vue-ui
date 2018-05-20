@@ -9,7 +9,8 @@
               </div>
               <span class="run-code" @click="runCode">运行代码</span>
               <span class="copy-code" @click="copyCode">复制代码</span>
-              <input type="text" class="copy-code-content" :value="code" style="opacity:0;position:absolute;">
+              <textarea type="text" class="copy-code-content" :value="code" style="opacity:0;position:absolute;">
+              </textarea>
               <div class="highlight-content">
                 <slot name="highlight"></slot>
               </div>
@@ -54,12 +55,7 @@
         var e = this.$el.querySelector('.copy-code-content');
         console.log(e.value)
         e.select();
-        document.execCommand("copy",false,null)
-        // window.copy(this.code)
-        // window.copy('asd')
-        if(document.execCommand('copy', false, null)){
-          console.log(111)
-        }
+        document.execCommand("copy",false,null);
         alert('复制成功')
       },
       setCode() {
